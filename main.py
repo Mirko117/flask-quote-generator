@@ -27,8 +27,10 @@ def get_api_quote():
     bg = bool(int(data['background'])) #true or false
     fonts_pick = int(data.get('font')) #int
     tags = data.get('tags')
+    image_url = ""
 
-    image_url = get_random_image_url(tags)
+    if bg:
+        image_url = get_random_image_url(tags)
 
     quote_text = get_random_quote()
 

@@ -4,6 +4,15 @@ document.getElementById('quote-form').addEventListener('submit', function(event)
     event.preventDefault(); // Prevent the default form submission
 });
 
+document.getElementById('background').addEventListener('change', function() {
+    let tagsWrapper = document.getElementById('tags-wrapper');
+    if (this.checked) {
+        tagsWrapper.style.display = 'block'; // Show tags input
+    } else {
+        tagsWrapper.style.display = 'none'; // Hide tags input
+    }
+});
+
 
 function getImage(){
     background = document.getElementById("background");

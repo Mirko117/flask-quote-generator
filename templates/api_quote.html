@@ -13,28 +13,28 @@
     <title>API Quote Generator</title>
 </head>
 <body>
-    <h1>API Quote Generator</h1>
-    <br>
-    <form id="quote-form">
-        <p>Background image:</p>
-        <label class="switch">
-            <input type="checkbox" id="background">
-            <span class="slider"></span>
-        </label>
-        <p>if background true: (</p>
-        <p>Write some tags e.g. nature,sky...</p>
-        <input type="text" id="tags">
-        <p>)</p>
-        <p>Font:</p>
-        <select name="font" id="font">
-            {% for i in range(fonts|length) %}
-                <option value="{{ i }}">{{ fonts[i] }}</option>
-            {% endfor %}
-        </select>
-        <br><br>
-        <input type="submit" value="Get Random Quote" onclick="getImage()">
-    </form>
-    <div id="images-wrapper"></div>
+    <div class="container main-wrapper">
+        <h1>API Quote Generator</h1>
+        <form id="quote-form">
+            <p>Background image:</p>
+            <label class="switch">
+                <input type="checkbox" id="background">
+                <span class="slider round"></span>
+            </label>
+            <div id="tags-wrapper">
+                <p>Write some tags e.g. nature,sky...</p>
+                <input type="text" id="tags">
+            </div>
+            <p>Font:</p>
+            <select name="font" id="font">
+                {% for i in range(fonts|length) %}
+                    <option value="{{ i }}">{{ fonts[i] }}</option>
+                {% endfor %}
+            </select>
+            <a onclick="getImage()" id="submit-button" class="button">Get Random Quote</a>
+        </form>
+        <div id="images-wrapper"></div>
+    </div>
 
     <script src="../static/js/api_quote.js"></script>
 </body>
