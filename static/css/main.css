@@ -1,0 +1,21 @@
+:root{
+    --c-dark: #001922;
+    --c-wheat: #E4D2C3;
+    --c-wheat-light: #FFE8D6;
+    --c-green-light: #6BF5C2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+.container{
+    max-width: 1340px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
