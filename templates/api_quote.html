@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/api_quote.css">
+
     <title>API Quote Generator</title>
 </head>
 <body>
-    
+    <h1>API Quote Generator</h1>
+    <br>
+    <form id="quote-form">
+        <p>Background image:</p>
+        <label class="switch">
+            <input type="checkbox" id="background">
+            <span class="slider"></span>
+        </label>
+        <p>if background true: (</p>
+        <p>Write some tags e.g. nature,sky...</p>
+        <input type="text" id="tags">
+        <p>)</p>
+        <p>Font:</p>
+        <select name="font" id="font">
+            {% for i in range(fonts|length) %}
+                <option value="{{ i }}">{{ fonts[i] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Get Random Quote" onclick="getImage()">
+    </form>
+    <div id="images-wrapper"></div>
+
+    <script src="../static/js/api_quote.js"></script>
 </body>
 </html>
