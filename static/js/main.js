@@ -1,5 +1,5 @@
 
-export function bgFollowMouse(){
+function bgFollowMouse(){
   let circle = document.getElementById('bg-effect-glow');
 
   const onMouseMove = (e) => {

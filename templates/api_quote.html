@@ -13,6 +13,12 @@
     <title>API Quote Generator</title>
 </head>
 <body>
+    <!-- Background effect -->
+    <div id="bg-effect-glow-wrapper">
+        <div id="bg-effect-glow"></div>
+    </div>
+    <div id="bg-effect"></div>
+
     <div class="container main-wrapper">
         <h1>API Quote Generator</h1>
         <form id="quote-form">
@@ -37,5 +43,8 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/api_quote.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>bgFollowMouse();</script>
 </body>
 </html>
