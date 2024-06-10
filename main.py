@@ -1,9 +1,12 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, send_from_directory
 from functions import *
 
 
 app = Flask(__name__)
 
+@app.route('/static/js/<path:filename>')
+def serve_js(filename):
+    return send_from_directory('static/js', filename, mimetype='application/javascript')
 
 @app.route('/')
 def index():
