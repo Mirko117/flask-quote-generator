@@ -20,6 +20,40 @@ body{
     margin: 0 auto;
 }
 
+.button{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: var(--c-dark);
+    background-color: var(--c-green-light);
+    border-radius: 5px;
+    transition: all .3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover{
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.button:active{
+    opacity: 0.70;
+}
+
+/* Header */
+
+header #back-arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+}
+
 
 /* Background */
 
@@ -48,27 +82,4 @@ body{
     position: fixed;
     z-index: -1;
     overflow: hidden;
-}
-
-
-.button{
-    text-decoration: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    color: var(--c-dark);
-    background-color: var(--c-green-light);
-    border-radius: 5px;
-    transition: all .3s;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-
-.button:hover{
-    transform: translateY(-2px);
-    opacity: 0.85;
-}
-
-.button:active{
-    opacity: 0.70;
 }
