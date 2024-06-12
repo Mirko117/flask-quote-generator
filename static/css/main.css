@@ -30,7 +30,9 @@ body{
     transition: all .3s;
     border: none;
     cursor: pointer;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button:hover{
@@ -40,6 +42,12 @@ body{
 
 .button:active{
     opacity: 0.70;
+}
+
+.disabled-button{
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.85;
 }
 
 /* Header */

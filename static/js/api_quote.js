@@ -13,9 +13,24 @@ document.getElementById('background').addEventListener('change', function() {
     }
 });
 
+// Function to show the loading spinner
+function buttonLoadingStart(buttonId){
+    $("#" + buttonId).addClass("disabled-button");
+    button = document.getElementById(buttonId)
+    button.innerHTML += "<img src='../static/images/button_loading.gif' alt='X'>"
+}
+
+// Function to stop the loading spinner
+function buttonLoadingStop(buttonId){
+    $("#" + buttonId).removeClass("disabled-button");
+    button = document.getElementById(buttonId)
+    button.innerHTML = button.innerHTML.slice(0, button.innerHTML.indexOf("<img"));
+}
+
 
 function getImage(){
     background = document.getElementById("background");
+    buttonLoadingStart("submit-button");
     if(background.checked){
         background = "1"
     }
@@ -43,6 +58,7 @@ function getImage(){
         success: function(blob){
             url = URL.createObjectURL(blob);
             document.getElementById("images-wrapper").innerHTML += `<img src='${url}' class='image'>`;
+            buttonLoadingStop("submit-button"); 
         }
     });
 }
