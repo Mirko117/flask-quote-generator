@@ -41,6 +41,15 @@ form p{
     margin: 10px;
 }
 
+#images-wrapper img:hover{
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+#images-wrapper img:active{
+    opacity: 0.7;
+}
+
 
 /* The switch - the box around the slider */
 .switch {

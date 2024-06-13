@@ -17,14 +17,14 @@ document.getElementById('background').addEventListener('change', function() {
 function buttonLoadingStart(buttonId){
     $("#" + buttonId).addClass("disabled-button");
     button = document.getElementById(buttonId)
-    button.innerHTML += "<img src='../static/images/button_loading.gif' alt='X'>"
+    button.innerHTML = "<img src='../static/images/button_loading.gif' alt='X'>"
 }
 
 // Function to stop the loading spinner
 function buttonLoadingStop(buttonId){
     $("#" + buttonId).removeClass("disabled-button");
     button = document.getElementById(buttonId)
-    button.innerHTML = button.innerHTML.slice(0, button.innerHTML.indexOf("<img"));
+    button.innerHTML = "Get Random Quote";
 }
 
 
@@ -57,8 +57,12 @@ function getImage(){
         data: JSON.stringify(payload),
         success: function(blob){
             url = URL.createObjectURL(blob);
-            document.getElementById("images-wrapper").innerHTML += `<img src='${url}' class='image'>`;
+            document.getElementById("images-wrapper").innerHTML += `<a href='${url}' download><img src='${url}' class='image'></a>`;
             buttonLoadingStop("submit-button"); 
+        },
+        error: function(){
+            buttonLoadingStop("submit-button");
+            alert("An error occurred. Please try again later.");
         }
     });
 }
