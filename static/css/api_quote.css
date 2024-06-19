@@ -42,7 +42,6 @@ form p{
 }
 
 #images-wrapper img:hover{
-    cursor: pointer;
     opacity: 0.85;
 }
 
@@ -113,4 +112,50 @@ form p{
   
   .slider.round:before {
     border-radius: 50%;
+}
+
+  /* Responsive:
+0px to 575px Small Devices (Tablets);
+Breakpoint: 576px to 767px Medium Devices (Tablets and Small Laptops);
+Breakpoint: 768px to 991px Large Devices (Desktops and Large Laptops);
+Breakpoint: 992px to 1199px Extra Large Devices */
+
+@media (max-width: 1300px){
+    #images-wrapper img{
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 991px){
+    #images-wrapper{
+        grid-template-columns: auto auto;
+    }
+    #images-wrapper img{
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 767px){
+  h1{
+      margin-top: 100px;
   }
+  #images-wrapper img{
+      max-width: 250px;
+  }
+}
+
+
+@media (max-width: 575px){
+  h1{
+      font-size: 32px;
+  }
+  #images-wrapper{
+      grid-template-columns: auto;
+  }
+  #images-wrapper a{
+      text-align: center;
+  }
+  #images-wrapper img{
+      max-width: 90%;
+  }
+}

@@ -20,3 +20,25 @@ p{
     justify-content: center;
     flex-direction: column;
 }
+
+/* Responsive:
+0px to 575px Small Devices (Tablets);
+Breakpoint: 576px to 767px Medium Devices (Tablets and Small Laptops);
+Breakpoint: 768px to 991px Large Devices (Desktops and Large Laptops);
+Breakpoint: 992px to 1199px Extra Large Devices */
+
+@media (max-width: 767px){
+    h1{
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 575px){
+    h1{
+        font-size: 32px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+}
